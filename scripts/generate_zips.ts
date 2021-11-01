@@ -31,6 +31,7 @@ const templateDir = path.join(__dirname, "..", "templates");
 	process.exit(1);
 });
 
+// NOTE: dir は絶対パスまたは output からの相対パスを指定する点に注意
 function generateZip(dir: string, name: string, output: string): Promise<any> {
 	return exec(`zip -r ${name} ${dir}`, { cwd: output, encoding: "utf-8" });
 }
