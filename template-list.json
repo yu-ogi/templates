@@ -1,10 +1,10 @@
 {
   "templates": {
-    "javascript": "/yu-ogi/templates/releases/latest/download/javascript.zip",
-    "javascript-minimal": "/yu-ogi/templates/releases/latest/download/javascript-minimal.zip",
-    "javascript-shin-ichiba-ranking": "/yu-ogi/templates/releases/latest/download/javascript-shin-ichiba-ranking.zip",
-    "typescript": "/yu-ogi/templates/releases/latest/download/typescript.zip",
-    "typescript-minimal": "/yu-ogi/templates/releases/latest/download/typescript-minimal.zip",
-    "typescript-shin-ichiba-ranking": "/yu-ogi/templates/releases/latest/download/typescript-shin-ichiba-ranking.zip"
+    "javascript": "https://github.com/yu-ogi/templates/releases/latest/download/javascript.zip",
+    "javascript-minimal": "https://github.com/yu-ogi/templates/releases/latest/download/javascript-minimal.zip",
+    "javascript-shin-ichiba-ranking": "https://github.com/yu-ogi/templates/releases/latest/download/javascript-shin-ichiba-ranking.zip",
+    "typescript": "https://github.com/yu-ogi/templates/releases/latest/download/typescript.zip",
+    "typescript-minimal": "https://github.com/yu-ogi/templates/releases/latest/download/typescript-minimal.zip",
+    "typescript-shin-ichiba-ranking": "https://github.com/yu-ogi/templates/releases/latest/download/typescript-shin-ichiba-ranking.zip"
   }
 }
