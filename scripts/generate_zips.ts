@@ -11,7 +11,7 @@ const templateDir = path.join(__dirname, "..", "templates");
 (async () => {
 	const templatePaths = (await fs.readdir(templateDir, { withFileTypes: true }))
 		.filter(dirent => dirent.isDirectory())
-		.map(dirent => path.join(templateDir, dirent.name));
+		.map(dirent => dirent.name);
 
 	const existsZips = (await fs.readdir(outputDir, { withFileTypes: true }))
 		.filter(dirent => /\.zip$/.test(dirent.name))
@@ -22,7 +22,7 @@ const templateDir = path.join(__dirname, "..", "templates");
 	}
 
 	for (let templatePath of templatePaths) {
-		await generateZip(templatePath, `${path.basename(templatePath)}.zip`, outputDir);
+		await generateZip(templateDir, templatePath, `${path.basename(templatePath)}.zip`, outputDir);
 	}
 
 	console.log("generated template zips successfully.");
@@ -31,7 +31,7 @@ const templateDir = path.join(__dirname, "..", "templates");
 	process.exit(1);
 });
 
-// NOTE: dir は絶対パスまたは output からの相対パスを指定する点に注意
-function generateZip(dir: string, name: string, output: string): Promise<any> {
-	return exec(`zip -r ${name} ${dir}`, { cwd: output, encoding: "utf-8" });
+async function generateZip(cwd: string, dir: string, name: string, output: string): Promise<any> {
+	await exec(`zip -r ${name} ${dir}`, { cwd, encoding: "utf-8" });
+	await exec(`mv ${name} ${output}`, { cwd, encoding: "utf-8" });
 }
