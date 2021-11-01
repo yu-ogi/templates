@@ -17,6 +17,7 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           npm ci
           npm test
+          npm run generate
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
