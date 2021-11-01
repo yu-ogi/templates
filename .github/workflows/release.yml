@@ -1,0 +1,26 @@
+name: Release and Upload Template ZIPs
+
+on:
+  workflow_dispatch:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install project
+        run: |
+          npm ci
+          npm run generate
+      - name: Set date
+        id: variables
+        run: |
+          TODAY=$(date '+%Y-%m-%d')
+          echo "::set-output name=today::$TODAY"
+      - uses: ncipollo/release-action@v1
+        with:
+          artifacts: "dist/*.zip"
+          name: "Release (${{ steps.variables.outputs.today }})"
+          tag: ${{ steps.variables.outputs.today }}
+          token: ${{ secrets.GITHUB_TOKEN }}
