@@ -1,0 +1,10 @@
+{
+  "templates": {
+    "javascript": "/yu-ogi/templates/releases/latest/download/javascript.zip",
+    "javascript-minimal": "/yu-ogi/templates/releases/latest/download/javascript-minimal.zip",
+    "javascript-shin-ichiba-ranking": "/yu-ogi/templates/releases/latest/download/javascript-shin-ichiba-ranking.zip",
+    "typescript": "/yu-ogi/templates/releases/latest/download/typescript.zip",
+    "typescript-minimal": "/yu-ogi/templates/releases/latest/download/typescript-minimal.zip",
+    "typescript-shin-ichiba-ranking": "/yu-ogi/templates/releases/latest/download/typescript-shin-ichiba-ranking.zip"
+  }
+}
