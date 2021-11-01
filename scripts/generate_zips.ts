@@ -10,12 +10,12 @@ const templateDir = path.join(__dirname, "..", "templates");
 
 (async () => {
 	const templatePaths = (await fs.readdir(templateDir, { withFileTypes: true }))
-		.filter(direct => direct.isDirectory())
-		.map(direct => path.join(templateDir, direct.name));
+		.filter(dirent => dirent.isDirectory())
+		.map(dirent => path.join(templateDir, dirent.name));
 
 	const existsZips = (await fs.readdir(outputDir, { withFileTypes: true }))
-		.filter(direct => /\.zip$/.test(direct.name))
-		.map(direct => path.join(outputDir, direct.name));
+		.filter(dirent => /\.zip$/.test(dirent.name))
+		.map(dirent => path.join(outputDir, dirent.name));
 	
 	for (let existsZip of existsZips) {
 		await fs.unlink(existsZip);
