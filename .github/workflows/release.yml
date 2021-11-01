@@ -1,0 +1,40 @@
+name: Release and Upload Template ZIPs
+
+on:
+  workflow_dispatch:
+
+env:
+  cache-version: v1
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm
+          key: ${{ env.cache-version }}-${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ env.cache-version }}-${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ env.cache-version }}-${{ runner.os }}-build-
+            ${{ env.cache-version }}-${{ runner.os }}-
+      - name: Install project
+        run: |
+          npm ci
+          npm run generate
+      - name: Set date
+        id: variables
+        run: |
+          TODAY=$(date '+%Y-%m-%d')
+          echo "::set-output name=today::$TODAY"
+      - uses: ncipollo/release-action@v1
+        with:
+          artifacts: "dist/*.zip"
+          name: "Release (${{ steps.variables.outputs.today }})"
+          tag: ${{ steps.variables.outputs.today }}
+          token: ${{ secrets.GITHUB_TOKEN }}
