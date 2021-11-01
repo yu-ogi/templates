@@ -21,8 +21,8 @@ const templateDir = path.join(__dirname, "..", "templates");
 		await fs.unlink(existsZip);
 	}
 
-	for (let templateDir of templatePaths) {
-		await generateZip(templateDir, `${path.basename(templateDir)}.zip`, outputDir);
+	for (let templatePath of templatePaths) {
+		await generateZip(templatePath, `${path.basename(templatePath)}.zip`, outputDir);
 	}
 
 	console.log("generated template zips successfully.");
