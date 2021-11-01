@@ -1,0 +1,37 @@
+{
+  "private": true,
+  "name": "@akashic-contents/templates",
+  "version": "1.0.0",
+  "description": "Templates for starting to create new Akashic Engine game",
+  "scripts": {
+    "generate": "run-s generate:**",
+    "generate:zips": "ts-node ./scripts/generate_zips.ts",
+    "test": "run-s test:**",
+    "test:jest": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akashic-contents/templates.git"
+  },
+  "author": "DWANGO Co., Ltd.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/akashic-contents/templates/issues"
+  },
+  "homepage": "https://github.com/akashic-contents/templates#readme",
+  "devDependencies": {
+    "@types/jest": "^27.0.2",
+    "jest": "^27.3.1",
+    "npm-run-all": "^4.1.5",
+    "ts-jest": "^27.0.7",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.4.4"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "testPathIgnorePatterns": [
+      "<rootDir>/templates/"
+    ]
+  }
+}
