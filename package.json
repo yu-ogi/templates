@@ -6,6 +6,7 @@
   "scripts": {
     "generate": "run-s generate:**",
     "generate:zips": "ts-node ./scripts/generate_zips.ts",
+    "deploy": "gh-pages -d public",
     "test": "run-s test:**",
     "test:jest": "jest"
   },
@@ -21,6 +22,7 @@
   "homepage": "https://github.com/akashic-contents/templates#readme",
   "devDependencies": {
     "@types/jest": "^27.0.2",
+    "gh-pages": "^3.2.3",
     "jest": "^27.3.1",
     "npm-run-all": "^4.1.5",
     "ts-jest": "^27.0.7",

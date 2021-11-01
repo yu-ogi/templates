@@ -17,7 +17,7 @@ const exec = util.promisify(childProcess.exec);
 const outputDir = path.join(__dirname, "..", "dist");
 const templateDir = path.join(__dirname, "..", "templates");
 const templateListJsonDir = path.join(__dirname, "..", "public");
-const templateListJsonBaseUrl = "/yu-ogi/templates/releases/latest/download/";
+const templateListJsonBaseUrl = "https://github.com/yu-ogi/templates/releases/latest/download/";
 
 (async () => {
 	const templatePaths = (await fs.readdir(templateDir, { withFileTypes: true }))
