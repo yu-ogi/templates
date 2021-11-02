@@ -1,7 +1,6 @@
 name: Release and Upload Template ZIPs
 
-on:
-  workflow_dispatch:
+on: [ workflow_dispatch ]
 
 env:
   cache-version: v1
