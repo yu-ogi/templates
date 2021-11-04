@@ -16,10 +16,24 @@ Akashic ゲームのテンプレートリポジトリ。
 
 ## 開発者向け
 
+### リリース
+
+[こちら](https://github.com/akashic-contents/templates/actions/workflows/release.yml) から手動でリリースすることができます。
+
 ### ZIP ファイルの生成
 
 以下コマンドを実行すると `./templates` 以下の各ディレクトリを ZIP 圧縮したファイルが `./dist` 以下に生成されます。
 
 ```sh
 npm run generate
+```
+
+### 成果物のテスト
+
+以下コマンドで成果物の妥当性チェックをします。
+テスト実行前に成果物を生成しておく必要があります。
+
+```sh
+npm run generate
+npm test
 ```

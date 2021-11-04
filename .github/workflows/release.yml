@@ -37,3 +37,6 @@ jobs:
           name: "Release (${{ steps.variables.outputs.today }})"
           tag: ${{ steps.variables.outputs.today }}
           token: ${{ secrets.GITHUB_TOKEN }}
+          allowUpdates: true
+          removeArtifacts: true
+          replacesArtifacts: true
