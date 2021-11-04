@@ -4,10 +4,12 @@
   "version": "1.0.0",
   "description": "Templates for starting to create new Akashic Engine game",
   "scripts": {
+    "postinstall": "lerna bootstrap --no-ci",
     "generate": "run-s generate:**",
     "generate:zips": "ts-node ./scripts/generate_zips.ts",
     "test": "run-s test:**",
-    "test:jest": "jest"
+    "test:jest": "jest",
+    "test:workspaces": "lerna run test"
   },
   "repository": {
     "type": "git",
@@ -23,6 +25,7 @@
     "@types/jest": "^27.0.2",
     "jest": "^27.3.1",
     "jszip": "^3.7.1",
+    "lerna": "^4.0.0",
     "npm-run-all": "^4.1.5",
     "ts-jest": "^27.0.7",
     "ts-node": "^10.4.0",

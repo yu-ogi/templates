@@ -4,7 +4,7 @@ import { GameContext } from "@akashic/headless-akashic";
 
 describe("mainScene", () => {
 	it("ゲームが正常に動作できる", async () => {
-		const context = new GameContext({
+		const context = new GameContext<3>({
 			gameJsonPath: path.join(__dirname, "..", "game.json")
 		});
 		const client = await context.getGameClient();
@@ -15,7 +15,9 @@ describe("mainScene", () => {
 		expect(game.height).toBe(720);
 		expect(game.fps).toBe(30);
 
-		await client.advanceUntil(() => game.scene().local !== "full-local"); // ローカル(ローディング)シーンを抜けるまで進める
+		await client.advanceUntil(
+			() => game.scene().local !== "full-local" && game.scene().name !== "_bootstrap"
+		); // ローカル(ローディング)シーンを抜けるまで進める
 
 		const scene = client.game.scene()!;
 		expect(scene).toBeDefined();
@@ -26,10 +28,10 @@ describe("mainScene", () => {
 
 		// 初期スコア、時間の値を確認
 		context.step();
-		const scoreLabel = scene.children[1] as g.Label;
+		const scoreLabel = scene.children[1] as unknown as g.Label;
 		expect(scoreLabel.text).toBe("SCORE: 0");
 
-		const timeLabel = scene.children[2] as g.Label;
+		const timeLabel = scene.children[2] as unknown as g.Label;
 		expect(timeLabel.text).toBe("TIME: 60");
 
 		// ゲーム画面をクリックすると弾 (g.Sprite) が生成されることを確認
