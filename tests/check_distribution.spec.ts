@@ -22,7 +22,7 @@ describe("check distribution", () => {
 			// root にテンプレート名のディレクトリが存在することを確認
 			expect(zip.files[name + "/"]).not.toBeUndefined();
 			// テンプレート名のディレクトリ直下に game.json が存在することを確認
-			expect(zip.files[name + "/game.json"]);
+			expect(zip.files[name + "/game.json"]).not.toBeUndefined();
 		}
 	});
 });
