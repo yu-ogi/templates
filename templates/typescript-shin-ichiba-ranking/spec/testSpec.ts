@@ -1,10 +1,9 @@
 import * as path from "path";
-import * as g from "@akashic/akashic-engine";
-import { GameContext } from "@akashic/headless-akashic";
+import { GameContext, RunnerV3_g as g } from "@akashic/headless-akashic";
 
 describe("mainScene", () => {
 	it("ゲームが正常に動作できる", async () => {
-		const context = new GameContext({
+		const context = new GameContext<3>({
 			gameJsonPath: path.join(__dirname, "..", "game.json")
 		});
 		const client = await context.getGameClient();
@@ -15,7 +14,9 @@ describe("mainScene", () => {
 		expect(game.height).toBe(720);
 		expect(game.fps).toBe(30);
 
-		await client.advanceUntil(() => game.scene().local !== "full-local"); // ローカル(ローディング)シーンを抜けるまで進める
+		await client.advanceUntil(
+			() => game.scene().local !== "full-local" && game.scene().name !== "_bootstrap"
+		); // ローカル(ローディング)シーンを抜けるまで進める
 
 		const scene = client.game.scene()!;
 		expect(scene).toBeDefined();

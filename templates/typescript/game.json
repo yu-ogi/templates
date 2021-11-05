@@ -21,6 +21,11 @@
 			"path": "audio/se",
 			"systemId": "sound",
 			"duration": 250
+		},
+		"main": {
+			"type": "script",
+			"path": "script/main.js",
+			"global": true
 		}
 	},
 	"moduleMainScripts": {},

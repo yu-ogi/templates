@@ -19,7 +19,8 @@ export = (originalParam: g.GameMainParameterObject) => {
 	const limitTickToWait = 3; // セッションパラメーターが来るまでに待つtick数
 
 	const scene = new g.Scene({
-		game: g.game
+		game: g.game,
+		name: "_bootstrap"
 	});
 	// セッションパラメーターを受け取ってゲームを開始します
 	scene.onMessage.add((msg) => {
