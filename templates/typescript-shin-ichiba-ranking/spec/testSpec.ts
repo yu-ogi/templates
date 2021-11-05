@@ -1,6 +1,5 @@
 import * as path from "path";
-import * as g from "@akashic/akashic-engine";
-import { GameContext } from "@akashic/headless-akashic";
+import { GameContext, RunnerV3_g as g } from "@akashic/headless-akashic";
 
 describe("mainScene", () => {
 	it("ゲームが正常に動作できる", async () => {
@@ -28,10 +27,10 @@ describe("mainScene", () => {
 
 		// 初期スコア、時間の値を確認
 		context.step();
-		const scoreLabel = scene.children[1] as unknown as g.Label;
+		const scoreLabel = scene.children[1] as g.Label;
 		expect(scoreLabel.text).toBe("SCORE: 0");
 
-		const timeLabel = scene.children[2] as unknown as g.Label;
+		const timeLabel = scene.children[2] as g.Label;
 		expect(timeLabel.text).toBe("TIME: 60");
 
 		// ゲーム画面をクリックすると弾 (g.Sprite) が生成されることを確認
