@@ -7,9 +7,7 @@
     ":dependencyDashboard",
     ":preserveSemverRanges",
     ":automergePatch",
-    ":separatePatchReleases",
-    "packages:jsTest",
-    "packages:eslint"
+    ":separatePatchReleases"
   ],
   "schedule": ["every weekend"],
   "packageRules": [
@@ -20,8 +18,17 @@
       "groupName": "akashic packages"
     },
     {
+      "matchPackagePatterns": ["@types/"],
+      "automerge": true,
+      "groupName": "@types packages"
+    },
+    {
       "matchPackagePatterns": ["eslint"],
       "groupName": "eslint packages"
+    },
+    {
+      "matchPackagePatterns": ["jest"],
+      "groupName": "jest packages"
     },
     {
       "matchDepTypes": ["minor"],
