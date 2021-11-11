@@ -15,9 +15,11 @@
   "packageRules": [
     {
       "matchPackagePatterns": ["^@akashic/"],
-      "groupName": "dependencies (@akashic)",
       "schedule": "at any time",
       "automerge": true
+    },
+    {
+      "matchPackagePatterns": ["^eslint"]
     },
     {
       "matchDepTypes": ["minor"],
