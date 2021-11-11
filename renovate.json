@@ -20,7 +20,7 @@
       "groupName": "akashic packages"
     },
     {
-      "matchPackagePatterns": ["^eslint"],
+      "matchPackagePatterns": ["eslint"],
       "groupName": "eslint packages"
     },
     {
