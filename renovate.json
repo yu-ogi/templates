@@ -16,7 +16,8 @@
     {
       "matchPackagePatterns": ["^@akashic/"],
       "schedule": "at any time",
-      "automerge": true
+      "automerge": true,
+      "groupName": "akashic packages"
     },
     {
       "matchPackagePatterns": ["^eslint"],
