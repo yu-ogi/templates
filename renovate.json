@@ -1,5 +1,27 @@
 {
   "extends": [
-    "config:base"
+    "config:base",
+    ":timezone(Asia/Tokyo)",
+    ":prConcurrentLimitNone",
+    ":prHourlyLimitNone",
+    ":dependencyDashboard",
+    ":preserveSemverRanges",
+    ":automergePatch",
+    ":separatePatchReleases",
+    "packages:jsTest",
+    "packages:eslint"
+  ],
+  "schedule": ["every weekend"],
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["^@akashic/"],
+      "groupName": "dependencies (@akashic)",
+      "schedule": "at any time",
+      "automerge": true
+    },
+    {
+      "matchDepTypes": ["minor"],
+      "groupName": "dependencies"
+    }
   ]
 }
