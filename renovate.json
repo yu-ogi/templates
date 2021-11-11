@@ -19,7 +19,8 @@
       "automerge": true
     },
     {
-      "matchPackagePatterns": ["^eslint"]
+      "matchPackagePatterns": ["^eslint"],
+      "groupName": "eslint packages"
     },
     {
       "matchDepTypes": ["minor"],
