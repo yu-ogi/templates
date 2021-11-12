@@ -11,8 +11,11 @@
   ],
   "schedule": ["every weekend"],
   "separateMinorPatch": false,
+  "patch": {
+    "groupName": "patch dependencies"
+  },
   "minor": {
-    "groupName": "dependencies"
+    "groupName": "minor dependencies"
   },
   "packageRules": [
     {
