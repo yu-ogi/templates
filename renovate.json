@@ -14,6 +14,7 @@
   "packageRules": [
     {
       "matchPackagePatterns": ["^@akashic/"],
+      "matchUpdateTypes": ["patch", "minor"],
       "schedule": "at any time",
       "automerge": true,
       "groupName": "akashic packages",
