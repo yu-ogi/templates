@@ -10,13 +10,13 @@
     "group:definitelyTyped"
   ],
   "schedule": ["every weekend"],
+  "separateMinorPatch": false,
   "packageRules": [
     {
       "matchPackagePatterns": ["^@akashic/"],
       "schedule": "at any time",
       "automerge": true,
       "groupName": "akashic packages",
-      "separateMinorPatch": false,
       "major": {
         "automerge": false
       }
