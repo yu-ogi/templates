@@ -7,7 +7,8 @@
     ":dependencyDashboard",
     ":preserveSemverRanges",
     ":automergePatch",
-    ":separatePatchReleases"
+    ":separatePatchReleases",
+    "group:definitelyTyped"
   ],
   "schedule": ["every weekend"],
   "packageRules": [
@@ -15,12 +16,10 @@
       "matchPackagePatterns": ["^@akashic/"],
       "schedule": "at any time",
       "automerge": true,
-      "groupName": "akashic packages"
-    },
-    {
-      "matchPackagePatterns": ["@types/"],
-      "automerge": true,
-      "groupName": "@types packages"
+      "groupName": "akashic packages",
+      "major": {
+        "automerge": false
+      }
     },
     {
       "matchPackagePatterns": ["eslint"],
