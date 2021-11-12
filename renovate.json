@@ -6,12 +6,12 @@
     ":prHourlyLimitNone",
     ":dependencyDashboard",
     ":preserveSemverRanges",
-    ":automergePatch",
     "group:definitelyTyped"
   ],
   "separateMinorPatch": false,
   "patch": {
-    "groupName": "patch dependencies"
+    "groupName": "patch dependencies",
+    "automerge": true
   },
   "minor": {
     "groupName": "minor dependencies"
