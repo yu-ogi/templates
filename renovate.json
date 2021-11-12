@@ -7,14 +7,12 @@
     ":dependencyDashboard",
     ":preserveSemverRanges",
     ":automergePatch",
-    ":separatePatchReleases",
     "group:definitelyTyped"
   ],
   "schedule": ["every weekend"],
   "packageRules": [
     {
       "matchPackagePatterns": ["^@akashic/"],
-      "matchUpdateTypes": ["patch", "minor"],
       "schedule": "at any time",
       "automerge": true,
       "groupName": "akashic packages",
