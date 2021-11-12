@@ -10,8 +10,7 @@
   ],
   "separateMinorPatch": false,
   "patch": {
-    "groupName": "patch dependencies",
-    "automerge": true
+    "groupName": "patch dependencies"
   },
   "minor": {
     "groupName": "minor dependencies"
@@ -33,6 +32,10 @@
     {
       "matchPackagePatterns": ["jest"],
       "groupName": "jest packages"
+    },
+    {
+      "updateTypes": ["patch", "pin", "digest"],
+      "automerge": true
     }
   ]
 }
