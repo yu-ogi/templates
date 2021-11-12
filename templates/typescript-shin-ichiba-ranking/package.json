@@ -23,6 +23,7 @@
     "@akashic/amflow": "~2.0.0",
     "@akashic/headless-akashic": "^2.2.0",
     "@akashic/playlog": "~3.0.0",
+    "@types/express": "4.17.10",
     "@types/jest": "26.0.24",
     "@types/node": "14.17.21",
     "@typescript-eslint/eslint-plugin": "3.10.1",
