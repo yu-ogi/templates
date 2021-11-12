@@ -16,6 +16,7 @@
       "schedule": "at any time",
       "automerge": true,
       "groupName": "akashic packages",
+      "separateMinorPatch": false,
       "major": {
         "automerge": false
       }
