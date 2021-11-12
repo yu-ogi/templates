@@ -16,7 +16,7 @@
       "matchPackagePatterns": ["^@akashic/"],
       "schedule": "at any time",
       "automerge": true,
-      "groupName": "akashic packages",
+      "groupName": "akashic non-major packages",
       "major": {
         "automerge": false
       }
