@@ -9,7 +9,6 @@
     ":automergePatch",
     "group:definitelyTyped"
   ],
-  "schedule": ["every weekend"],
   "separateMinorPatch": false,
   "patch": {
     "groupName": "patch dependencies"
