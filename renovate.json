@@ -9,6 +9,13 @@
     "group:definitelyTyped"
   ],
   "separateMinorPatch": false,
+  "patch": {
+    "groupName": "minor dependencies",
+    "automerge": true
+  },
+  "minor": {
+    "groupName": "patch dependencies"
+  },
   "packageRules": [
     {
       "matchPackagePatterns": ["^@akashic/"],
@@ -26,15 +33,6 @@
     {
       "matchPackagePatterns": ["jest"],
       "groupName": "jest packages"
-    },
-    {
-      "matchUpdateTypes": ["patch", "pin", "digest"],
-      "groupName": "patch dependencies",
-      "automerge": true
-    },
-    {
-      "matchUpdateTypes": ["minor"],
-      "groupName": "minor dependencies"
     }
   ]
 }
