@@ -1,0 +1,39 @@
+{
+  "extends": [
+    "config:base",
+    ":timezone(Asia/Tokyo)",
+    ":prConcurrentLimitNone",
+    ":prHourlyLimitNone",
+    ":dependencyDashboard",
+    ":preserveSemverRanges",
+    ":automergePatch",
+    "group:definitelyTyped"
+  ],
+  "schedule": ["every weekend"],
+  "separateMinorPatch": false,
+  "patch": {
+    "groupName": "patch dependencies"
+  },
+  "minor": {
+    "groupName": "minor dependencies"
+  },
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["^@akashic/"],
+      "schedule": "at any time",
+      "automerge": true,
+      "groupName": "akashic non-major packages",
+      "major": {
+        "automerge": false
+      }
+    },
+    {
+      "matchPackagePatterns": ["eslint"],
+      "groupName": "eslint packages"
+    },
+    {
+      "matchPackagePatterns": ["jest"],
+      "groupName": "jest packages"
+    }
+  ]
+}
