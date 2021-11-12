@@ -11,6 +11,9 @@
   ],
   "schedule": ["every weekend"],
   "separateMinorPatch": false,
+  "minor": {
+    "groupName": "dependencies"
+  },
   "packageRules": [
     {
       "matchPackagePatterns": ["^@akashic/"],
@@ -28,10 +31,6 @@
     {
       "matchPackagePatterns": ["jest"],
       "groupName": "jest packages"
-    },
-    {
-      "matchDepTypes": ["minor"],
-      "groupName": "dependencies"
     }
   ]
 }
