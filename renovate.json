@@ -10,11 +10,11 @@
   ],
   "separateMinorPatch": false,
   "patch": {
-    "groupName": "minor dependencies",
+    "groupName": "patch dependencies",
     "automerge": true
   },
   "minor": {
-    "groupName": "patch dependencies"
+    "groupName": "minor dependencies"
   },
   "packageRules": [
     {
