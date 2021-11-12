@@ -9,13 +9,6 @@
     "group:definitelyTyped"
   ],
   "separateMinorPatch": false,
-  "patch": {
-    "groupName": "patch dependencies",
-    "automerge": true
-  },
-  "minor": {
-    "groupName": "minor dependencies"
-  },
   "packageRules": [
     {
       "matchPackagePatterns": ["^@akashic/"],
@@ -33,6 +26,17 @@
     {
       "matchPackagePatterns": ["jest"],
       "groupName": "jest packages"
+    },
+    {
+      "matchUpdateTypes": ["patch"],
+      "excludePackagePatterns": ["@akashic/", "eslint", "jest"],
+      "groupName": "patch dependencies",
+      "automerge": true
+    },
+    {
+      "matchUpdateTypes": ["minor"],
+      "excludePackagePatterns": ["@akashic/", "eslint", "jest"],
+      "groupName": "minor dependencies"
     }
   ]
 }
