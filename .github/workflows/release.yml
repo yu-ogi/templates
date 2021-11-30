@@ -6,7 +6,6 @@ on:
       - main
     types:
       - closed
-  workflow_dispatch:
 
 env:
   cache-version: v1
