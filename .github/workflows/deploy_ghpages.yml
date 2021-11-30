@@ -3,7 +3,7 @@ name: Deploy template-list.json on GitHub Pages
 on:
   push:
     branches:
-      - main
+      - 'main-*'
 
 env:
   cache-version: v1
