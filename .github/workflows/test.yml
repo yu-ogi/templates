@@ -29,4 +29,5 @@ jobs:
       - name: Run test
         run: |
           npm ci
+          npm run generate
           npm test
