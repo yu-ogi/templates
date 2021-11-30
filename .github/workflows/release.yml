@@ -3,7 +3,7 @@ name: Release and Upload Template ZIPs
 on:
   pull_request:
     branches:
-      - main
+      - 'main-*'
     types:
       - closed
 
