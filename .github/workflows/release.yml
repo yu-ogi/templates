@@ -1,12 +1,19 @@
 name: Release and Upload Template ZIPs
 
-on: [ workflow_dispatch ]
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - closed
+  workflow_dispatch:
 
 env:
   cache-version: v1
 
 jobs:
   release:
+    if: contains(github.event.pull_request.labels.*.name, 'release') # PullRequest に release ラベルが付与されている場合のみ実行
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -26,6 +33,7 @@ jobs:
         run: |
           npm ci
           npm run generate
+          npm test
       - name: Set date
         id: variables
         run: |
