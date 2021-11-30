@@ -9,6 +9,7 @@
     "group:definitelyTyped"
   ],
   "schedule": ["after 10pm and before 6am every weekday", "every weekend"],
+  "labels": ["dependencies"],
   "separateMinorPatch": false,
   "packageRules": [
     {
@@ -16,6 +17,7 @@
       "schedule": "at any time",
       "automerge": true,
       "groupName": "akashic non-major packages",
+      "addLabels": ["release"],
       "major": {
         "automerge": false
       }
@@ -32,12 +34,14 @@
       "matchUpdateTypes": ["patch"],
       "excludePackagePatterns": ["@akashic/", "eslint", "jest"],
       "groupName": "patch dependencies",
+      "addLabels": ["release"],
       "automerge": true
     },
     {
       "matchUpdateTypes": ["minor"],
       "excludePackagePatterns": ["@akashic/", "eslint", "jest"],
-      "groupName": "minor dependencies"
+      "groupName": "minor dependencies",
+      "addLabels": ["release"]
     }
   ]
 }

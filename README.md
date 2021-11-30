@@ -18,7 +18,8 @@ Akashic ゲームのテンプレートリポジトリ。
 
 ### リリース
 
-[こちら](https://github.com/akashic-contents/templates/actions/workflows/release.yml) から手動でリリースすることができます。
+PullRequest を作成後、 `release` ラベルを付与してください。
+対象の PullRequest が main ブランチにマージされるとリリースが実行されます。
 
 ### ZIP ファイルの生成
 
