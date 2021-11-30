@@ -12,7 +12,7 @@ env:
 
 jobs:
   release:
-    if: github.event.pull_request.merged == true || contains(github.event.pull_request.labels.*.name, 'release')
+    if: github.event.pull_request.merged == true && contains(github.event.pull_request.labels.*.name, 'release')
     # PullRequest に release ラベルが付与されている場合のみ実行
     runs-on: ubuntu-latest
     steps:
