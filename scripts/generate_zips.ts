@@ -48,7 +48,6 @@ const templateListJsonBaseUrl = "https://github.com/akashic-contents/templates/r
 });
 
 async function generateZip(cwd: string, dir: string, name: string, output: string): Promise<any> {
-	await exec(`git clean -xdf`, { cwd, encoding: "utf-8" });
-	await exec(`zip -r ${name} ${dir}`, { cwd, encoding: "utf-8" });
+	await exec(`zip -r ${name} ${dir} -x "*node_modules*"`, { cwd, encoding: "utf-8" });
 	await exec(`mv ${name} ${output}`, { cwd, encoding: "utf-8" });
 }
