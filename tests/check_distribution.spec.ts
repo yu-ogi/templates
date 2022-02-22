@@ -10,7 +10,7 @@ describe("check distribution", () => {
 			.filter(dirent => dirent.isFile() && path.extname(dirent.name) === ".zip")
 			.map(dirent => path.join(templateDir, dirent.name));
 
-		if (!templateZipPaths) {
+		if (!templateZipPaths || !templateZipPaths.length) {
 			throw new Error("distribution does not exist.");
 		}
 
