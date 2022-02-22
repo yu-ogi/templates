@@ -7,9 +7,6 @@ on:
     types:
       - closed
 
-env:
-  cache-version: v1
-
 jobs:
   release:
     # PullRequest に release ラベルが付与されている場合のみ実行
