@@ -2,9 +2,6 @@ name: Test
 
 on: [push, pull_request]
 
-env:
-  cache-version: v1
-
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -15,17 +12,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '16'
-      - name: Cache node modules
-        uses: actions/cache@v2
-        env:
-          cache-name: cache-node-modules
-        with:
-          path: ~/.npm
-          key: ${{ env.cache-version }}-${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ env.cache-version }}-${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ env.cache-version }}-${{ runner.os }}-build-
-            ${{ env.cache-version }}-${{ runner.os }}-
+          cache: npm
       - name: Run test
         run: |
           npm ci
