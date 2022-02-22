@@ -24,11 +24,13 @@
     },
     {
       "matchPackagePatterns": ["eslint"],
-      "groupName": "eslint packages"
+      "groupName": "eslint packages",
+      "automerge": true
     },
     {
       "matchPackagePatterns": ["jest"],
-      "groupName": "jest packages"
+      "groupName": "jest packages",
+      "automerge": true
     },
     {
       "matchUpdateTypes": ["patch"],
