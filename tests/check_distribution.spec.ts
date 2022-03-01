@@ -1,4 +1,4 @@
-import * as fs from "fs/promises";
+import { promises as fs } from "fs";
 import * as path from "path";
 import * as jszip from "jszip";
 
@@ -10,7 +10,7 @@ describe("check distribution", () => {
 			.filter(dirent => dirent.isFile() && path.extname(dirent.name) === ".zip")
 			.map(dirent => path.join(templateDir, dirent.name));
 
-		if (!templateZipPaths) {
+		if (!templateZipPaths || !templateZipPaths.length) {
 			throw new Error("distribution does not exist.");
 		}
 
