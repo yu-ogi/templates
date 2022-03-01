@@ -23,6 +23,7 @@
   "homepage": "https://github.com/akashic-contents/templates#readme",
   "devDependencies": {
     "@types/jest": "^27.4.0",
+    "@types/node": "^17.0.21",
     "jest": "^27.5.1",
     "jszip": "^3.7.1",
     "lerna": "^4.0.0",
