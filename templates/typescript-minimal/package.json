@@ -20,7 +20,7 @@
     "@akashic/akashic-cli-scan": "0.15.31",
     "@akashic/akashic-engine": "~3.3.0",
     "@akashic/akashic-sandbox": "~0.17.35",
-    "@akashic/headless-akashic": "^2.2.0",
+    "@akashic/headless-akashic": "^3.0.0",
     "@types/jest": "27.4.1",
     "@types/node": "16.11.26",
     "@typescript-eslint/eslint-plugin": "5.15.0",
