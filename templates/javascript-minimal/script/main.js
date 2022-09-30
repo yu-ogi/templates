@@ -18,7 +18,5 @@ function main(param) {
         scene.append(rect);
     });
     g.game.pushScene(scene);
-
-    var b = 1;
 }
 module.exports = main;
