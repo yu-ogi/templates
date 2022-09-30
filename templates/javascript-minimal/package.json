@@ -5,7 +5,7 @@
   "description": "",
   "scripts": {
     "start": "akashic-sandbox .",
-    "lint": "eslint script",
+    "lint": "eslint \"script/**/*.js\" --fix",
     "test": "npm run lint"
   },
   "keywords": [],
