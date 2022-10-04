@@ -15,7 +15,7 @@ describe("mainScene", () => {
 		expect(game.fps).toBe(30);
 
 		await client.advanceUntil(
-			() => game.scene().local !== "full-local" && game.scene().name !== "_bootstrap"
+			() => game.scene()!.local !== "full-local" && game.scene()!.name !== "_bootstrap"
 		); // ローカル(ローディング)シーンを抜けるまで進める
 
 		const scene = client.game.scene()!;
