@@ -6,7 +6,6 @@
   ],
   "addLabels": ["release"],
   "automerge": true,
-  "automergeSchedule": ["every weekend"],
   "packageRules": [
     {
       "matchPackagePatterns": ["eslint"],
